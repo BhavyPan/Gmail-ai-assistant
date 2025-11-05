@@ -51,11 +51,10 @@ SCOPES = [
 
 # AI Functions
 def setup_gemini():
-    """Setup Gemini AI"""
-    try:
-        import google.generativeai as genai
-        genai.configure(api_key=GEMINI_API_KEY)
-        return genai.GenerativeModel('gemini-pro')
+    import google.generativeai as genai
+    genai.configure(api_key=GEMINI_API_KEY)
+    # Use current supported model name
+    return genai.GenerativeModel("gemini-1.5-flash")
     except Exception as e:
         logger.error(f"Gemini setup error: {str(e)}")
         return None
