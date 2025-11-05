@@ -54,7 +54,7 @@ def setup_gemini():
     import google.generativeai as genai
     genai.configure(api_key=GEMINI_API_KEY)
     # Use current supported model name
-    return genai.GenerativeModel("gemini-2.5-flash")
+    return genai.GenerativeModel("gemini-2.5-pro")
     except Exception as e:
         logger.error(f"Gemini setup error: {str(e)}")
         return None
